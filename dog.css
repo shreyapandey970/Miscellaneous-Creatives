@@ -1,0 +1,264 @@
+.cartoon{
+		width:90vmin;               /*can be written as 90vmin. 1vmin=1% of viewport width. Viewport is user's visible page area. */
+		aspect-ratio:1/1;           /*1/2,2/1,16/9,4/3,0.5,auto(default),inherit,initial,unset(gloabl)*/
+		background:#f002;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);              /*leaves 50% from left and right. Aligns in center*/
+
+	   }
+
+
+.cartoon *,                 /*pointer as an object*/
+
+
+
+.cartoon *::before,
+.cartoon *::after{
+				position:absolute;
+				box-sizing:border-box; /*padding and border are included in element's height and width*/
+			}
+
+.head{
+		width:50%;
+		height:52%;
+		border: 1.5vmin solid black;
+		border-radius: 100% / 70% 80% 124% 120%;
+		border-bottom:0.5vmin solid var(--skin1);
+		border-top: 1.25vmin solid;
+		top:10%;
+		left:50%;
+		transform:translate(-50%);  /*repositions the element*/
+		background: radial-gradient(at 100% 0%, var(--skin2) 40%, #0000 0);
+		background-color:var(--skin1);
+
+	}
+
+.cartoon{
+		--bg:#fff;
+		--skin1:#fff;   /* -- represents customized properties that can be used in other declarations using var func.*/
+		--skin2:#b74;
+		
+	   }
+
+
+.nose{
+		width:25%;	
+		height:12%;
+		background: radial-gradient(at 20% 30%, #fff 10%, #0000 0);
+		background-color:black;
+		border-radius:70% / 30% 30% 120% 120%;
+		top:60%;
+		left:50%;
+		transform:translate(-50%,-50%);
+	}
+
+
+.eye{
+		width:22%;
+		height:25%;
+		background:#00f;
+		border-radius:100% / 100%;
+		box-shadow:0 -0.5vmin 0 0.25vmin, 0 0.5vmin 0 0.25vmin ;
+		
+		background:radial-gradient(circle at 35% 50%, #fff 12%,#0000 0),
+				 radial-gradient(circle at 49% 40%, #fff 7%,#0000 0),
+				 radial-gradient(circle at 50% 60%, #000 20%, #752 21% 40%, #000 41% 45%, #0000 0);
+
+		background-color: #fff;
+		top:23%;
+		left:15%;
+		transform:rotate(-5deg);
+	}
+
+/*The radial-gradient() function sets a radial gradient as the background image.*/
+
+.eye + .eye {
+			left:auto;
+			right:15%;
+			transform:rotate(5deg);
+		   } /*concatenating the same class*/
+
+/*A radial gradient is defined by its center.
+
+To create a radial gradient you must define at least two color stops.*/
+
+
+
+.snout {
+  width: 30%;
+  height: 20%;
+  border-radius: 100% / 00% 40% 100% 130%;
+  border: 0.75vmin solid;
+  border-top-color: var(--skin1);
+  top: 63%;
+  left: 50%;
+  transform: translate(-100%);
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+  background:
+    radial-gradient(circle at 20% 40%, #000 5%, #0000 0),
+    radial-gradient(circle at 50% 50%, #000 7%, #0000 0),
+    radial-gradient(circle at 33% 66%, #000 5%, #0000 0)
+    ;
+  background-color: var(--skin1);
+  
+}
+
+.snout + .snout {
+  transform: scaleX(-1);
+  left: calc(50% - 0.375vmin);
+}
+
+
+.line {
+  width: 70%;
+  height: 10%;
+  border: 0.5vmin solid #0000;
+  border-top: 1vmin solid;
+  border-radius: 100%;
+  top: 66.9%;
+  left: 50%;
+  transform: translateX(-50%) rotate(0.25deg);
+}
+
+.tongue {
+  width: 20%;
+  height: 20%;
+  border: 0.7vmin solid;
+  border-bottom: 1vmin solid;
+  background: linear-gradient(#000 0 0) 45% 15% / 8% 50% no-repeat;
+  background-color: pink;
+  border-radius: 0 0 10vmin 10vmin;
+  left: 50%;
+  top: 73%;
+  transform: translate(-50%, 0) rotate(5deg);
+}
+
+
+.hair{
+		width:35%;
+		height:10%;
+		border-radius:100% 100% 100% 0;
+		border:0.5vmin solid #0000;
+		border-top:1vmin solid;
+		border-left:2vmin solid #0000;
+		transform:translate(-50%) rotate(-6deg);
+		top:11.9%;
+		left:49%;
+		transform-origin:top left;
+	}
+
+.hair::before {
+  content: "";
+  width: 120%;
+  height: 100%;
+  border-radius: 100% 100% 100% 0;
+  border: 0.5vmin solid #0000;
+  border-top: 1vmin solid;
+  border-left: 2vmin solid #0000;
+  transform: rotate(-5deg);
+  transform-origin: top left;
+  left: -10%;
+  top: -2%;
+}
+
+.collar{
+		 width: 33%;
+ 		 height: 20%;
+ 		 border-radius: 100% / 50%;
+		 background: #beeeef;
+    		 border: 0.8vmin solid;
+  		 border-bottom: 1vmin solid;
+  		 top: 47%;
+  		 left: 50%;
+ 		 transform: translate(-50%, 0);
+	   }
+
+/*not working*/
+.collar::before {
+  content: "";
+  height: 70%;
+  aspect-ratio: 1;
+  border: 0.75vmin solid;
+  border-bottom: 1vmin solid;
+  border-radius: 50%;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  background:
+    radial-gradient(circle at 50% 63%, darkgray 25%, #0000 0),
+    radial-gradient(circle at 50% 30%, darkgray 10%, #0000 0),
+    radial-gradient(circle at 32% 38%, darkgray 9%, #0000 0),
+    radial-gradient(circle at 68% 38%, darkgray 9%, #0000 0)
+    ;
+  background-color: lightgray;
+}
+
+
+.frame {
+  width: 100%;
+  height: 10%;
+  border-top: 1vmin solid;
+  background: var(--bg);
+  top: 90%;
+}
+
+
+.body {
+  width: 70%;
+  height: 35%;
+  border: 1.5vmin solid;
+  border-top: 1vmin solid;
+  border-radius: 100% / 160% 160% 20% 20%;
+  background:var(--skin1);
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+
+.paw {
+  width: 20%;
+  height: 15%;
+  border: 1vmin solid;
+  border-bottom: 1.25vmin solid;
+  border-radius: 110% / 90% 100% 120% 149%;
+  background:
+    linear-gradient(to right, #0000 25%, #000 0 30%, #0000 0 49%, #000 0 53%, #0000 0 71%, #000 0 75%, #0000 0) 100% 100% / 100% 40% no-repeat;
+    ;
+  background-color: var(--skin1);
+  transform: rotate(-10deg);
+  top: 83%;
+  left: 10%;
+}
+
+.paw + .paw {
+  left: auto;
+  right: 9%;
+  top: 82%;
+  transform: scaleX(-1) rotate(-12deg);
+  border-radius: 120% / 100% 100% 120% 149%;
+}
+
+.ear {
+  width: 30%;
+  height: 40%;
+  background: var(--skin2);
+  border-radius: 120% 50%;
+  border: 1vmin solid;
+  border-left: 1.25vmin solid;
+  top: 13%;
+  left: 13%;
+}
+
+.ear + .ear {
+  left: auto;
+  right: 15%;
+  top: 13%;
+  transform: scaleX(-1) rotate(25deg);
+  border-radius:  50%;
+}
+
+
+
