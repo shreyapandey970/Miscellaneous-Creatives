@@ -7,7 +7,7 @@ Dog -
 Loading - 
 ![image](https://github.com/shreyapandey970/Miscellaneous-Creatives/assets/122536488/1fb95539-2fc1-440d-8431-6c7705346789)
 
-Ambient - 
+Ambient -
 ![image](https://github.com/shreyapandey970/Miscellaneous-Creatives/assets/122536488/6f279562-d28e-4800-959f-a09374c96e8e)
 
 
